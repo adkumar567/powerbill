@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Bill Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Power Bill Calculator</h1>
+        <form id="billForm">
+            <div class="form-group">
+                <label for="units">Units Consumed:</label>
+                <input type="number" id="units" name="units" required min="0" step="0.01">
+            </div>
+            <div class="form-group">
+                <label for="charge">Charge per Unit:</label>
+                <div class="options-group horizontal">
+                    <div class="checkbox-group">
+                        <input type="radio" id="charge9" name="chargeOption" value="9" checked>
+                        <label for="charge9">₹9.00</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" id="charge10" name="chargeOption" value="10">
+                        <label for="charge10">₹10.00</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" id="chargeCustom" name="chargeOption" value="custom">
+                        <label for="chargeCustom">Custom:</label>
+                        <input type="number" id="charge" name="charge" min="0" step="0.01" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="fixed">Fixed Cost:</label>
+                <div class="options-group horizontal">
+                    <div class="checkbox-group">
+                        <input type="radio" id="fixed350" name="fixedOption" value="350" checked>
+                        <label for="fixed350">₹350.00</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" id="fixed500" name="fixedOption" value="500">
+                        <label for="fixed500">₹500.00</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" id="fixedCustom" name="fixedOption" value="custom">
+                        <label for="fixedCustom">Custom:</label>
+                        <input type="number" id="fixed" name="fixed" min="0" step="0.01" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="surcharge" name="surcharge" checked>
+                <label for="surcharge">Add Surcharge (7.5%)</label>
+            </div>
+            <button type="submit">Calculate Bill</button>
+        </form>
+        <div id="result" class="result">
+            <h2>Total Bill: <span id="totalAmount">0.00</span></h2>
+            <button type="button" id="resetButton" class="reset-button">Reset to Defaults</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
